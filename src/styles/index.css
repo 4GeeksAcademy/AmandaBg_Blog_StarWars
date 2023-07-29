@@ -1,3 +1,92 @@
-/* 
-    General Styles
-*/
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(https://www.wallpapertip.com/wmimgs/42-420188_star-wars-earth-planet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.718);
+    height: 4rem;
+}
+
+.btn {
+    border: none;
+    background: #e8b43c;
+    color: rgb(255, 255, 255);
+}
+
+.img-sw {
+    width: 5rem;
+    margin-left: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.762);
+    margin-top: 1.5rem;
+    overflow: auto;
+}
+
+h2 {
+    margin: auto;
+    padding: 2rem;
+    text-align: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:  #e8b43c;
+    overflow: auto;
+}
+
+.card {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    background: #212429db;
+}
+
+.card-img {
+    height: 300px;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: center;
+}
+
+h5 {
+    color: #e8b43c;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-description {
+    background: #212429db;
+    margin: 2rem 10rem 2rem 10rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ 
+ h1 {
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color:  #e8b43c;
+     justify-content: center;
+ }
+ 
+ .card-text{
+     font-style: italic;
+     color: white;
+     font-family: monospace;
+ }
+ 
+ h4 {
+     color: #e8b43c;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+ 
+ .img-fluid{
+     margin: 1rem 2rem;
+     padding: 0.5rem;
+     border-radius: 2rem;
+ }

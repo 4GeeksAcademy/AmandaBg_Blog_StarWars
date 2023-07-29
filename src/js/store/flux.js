@@ -1,45 +1,78 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			urlStarWars: "https://www.swapi.tech/api",
+
+			people: [],
+			characterDetails: [],
+			
+			planets: [],
+			planetsDetails: [],
+
+			//llamar las funciones en el use effect 
+
 		},
+
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			//Funcion para traer los personajes
+			getPeople: () => {
+				const store = getStore() //Traer el store y hacer el uso de variables
+				fetch(`${store.urlStarWars}/people`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ people: data.results }) //acceder a la data
+					})
+					.catch(error => console(error + "Error in getPeople()"));
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
+
+			getPeopleById: id => {
 				const store = getStore();
+				fetch(`${store.urlStarWars}/people/${id}`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({characterDetails: data.result})
+						console.log(store.characterDetails);
+					})
+					.catch(error => console(error + "Error in getPeople()"));
+			},
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+			getPlanets: () => {
+				const store = getStore() //Traer el store y hacer el uso de variables
+				fetch(`${store.urlStarWars}/planets`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ planets: data.results }) //acceder a la data
+					})
+					.catch(error => console(error + "Error in getPlanets()"));
+			},
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
+			getPlanetsById: id => {
+				const store = getStore();
+				fetch(`${store.urlStarWars}/planets/${id}`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({planetsDetails: data.result})
+						console.log(store.planetsDetails);
+					})
+					.catch(error => console(error + "Error in getPlanets()"));
+			},
 		}
-	};
+	}
 };
 
 export default getState;
+
+// const getPeopleByID = id => {
+				// 	setStore({ idCharacter: null });
+				// 	setStore({ uidCharacter: null });
+				// 	const store = getStore();
+
+				// 	fetch(`${store.urlApi}/people/${id}`)
+				// 	  .then(response => response.json())
+				// 	  .then(data => {
+				// 		console.log(data);
+				// 		setStore({ idCharacter: data.result.properties });
+				// 		setStore({ uidCharacter: id });
+				// 	  })
+				// 	  .catch(error => console.log(error + " Error in getPeopleByID()"));
+				//   };
