@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({characterDetails: data.result})
 						console.log(store.characterDetails);
 					})
-					.catch(error => console(error + "Error in getPeople()"));
+					.catch(error => console(error + "Error in getPeopleById()"));
 			},
 
 			getPlanets: () => {
@@ -54,7 +54,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({planetsDetails: data.result})
 						console.log(store.planetsDetails);
 					})
-					.catch(error => console(error + "Error in getPlanets()"));
+					.catch(error => console(error + "Error in getPlanetsById()"));
+			},
+			getVehicle: () => {
+				const store = getStore() //Traer el store y hacer el uso de variables
+				fetch(`${store.urlStarWars}/vehicles`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ vehicle: data.results }) //acceder a la data
+					})
+					.catch(error => console(error + "Error in getVehicle()"));
+			},
+
+			getVehicleById: id => {
+				const store = getStore();
+				fetch(`${store.urlStarWars}/vehicles/${id}`)
+					.then(response => response.json())
+					.then(data => {
+						setStore({vehicleDetails: data.result})
+						console.log(store.vehicleDetails);
+					})
+					.catch(error => console(error + "Error in getVehicleById()"));
 			},
 		}
 	}

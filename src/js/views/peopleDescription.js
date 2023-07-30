@@ -18,7 +18,7 @@ export const PeopleDescription = () => {
 
   //renderizado del componente
   return (
-      <div className="card-description">
+      <div className="container-description">
         <div className="row">
           <div className="col-md-6">
             <img src={`https://starwars-visualguide.com/assets/img/characters/${store.characterDetails.uid}.jpg`} className='img-fluid' />

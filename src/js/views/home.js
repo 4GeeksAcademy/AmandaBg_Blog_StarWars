@@ -14,6 +14,7 @@ export const Home = (...props) => {
 
 	return (
 		<div>
+			<div>
 			<div className="container">
 				<h2>Characters</h2>
 				<div className="card-group d-flex flex-wrap">
@@ -28,6 +29,7 @@ export const Home = (...props) => {
 						}
 					</ul>
 				</div>
+			</div>
 			</div>
 			<div className="container">
 				<h2>Planets</h2>

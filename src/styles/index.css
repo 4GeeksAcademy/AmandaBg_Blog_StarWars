@@ -6,67 +6,45 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-
+/* Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, 0.718);
     height: 4rem;
+    padding: 0.6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
     border: none;
+    transition: 0.3s;
     background: #e8b43c;
     color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.button:hover {
+  background-color: #45a049;
+}
 .img-sw {
     width: 5rem;
     margin-left: 1.5rem;
     margin-top: 0.3rem;
 }
 
-.container {
-    background-color: rgba(0, 0, 0, 0.762);
-    margin-top: 1.5rem;
-    overflow: auto;
-}
 
-h2 {
-    margin: auto;
-    padding: 2rem;
-    text-align: auto;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:  #e8b43c;
-    overflow: auto;
-}
+/* Description-card */
 
-.card {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 1rem;
-    padding-bottom: 2rem;
-    margin-bottom: 3rem;
-    background: #212429db;
-}
-
-.card-img {
-    height: 300px;
-    margin: auto;
-    margin-top: 2rem;
-    border-radius: 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.container-description {
     justify-content: center;
-}
-
-h5 {
-    color: #e8b43c;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.card-description {
     background: #212429db;
     margin: 2rem 10rem 2rem 10rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- }
+    width: 70%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ 
  
  h1 {
      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -78,6 +56,7 @@ h5 {
      font-style: italic;
      color: white;
      font-family: monospace;
+     
  }
  
  h4 {
@@ -87,6 +66,6 @@ h5 {
  
  .img-fluid{
      margin: 1rem 2rem;
-     padding: 0.5rem;
      border-radius: 2rem;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
  }

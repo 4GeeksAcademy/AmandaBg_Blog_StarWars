@@ -12,12 +12,12 @@ export const CardPlanets = ({planets}) => {
     //renderizado del componente, useParams se utilizará para obtener los parámetros de la URL.
     return (
         <div className="card">
-            <img src={`https://www.swapi.tech/api/planets${store.planets.uid}.jpg`} onError={({ currentTarget }) => {
+            <img src={`https://starwars-visualguide.com/assets/img/planets/${planets.uid}.jpg`} onError={({ currentTarget }) => {
                     currentTarget.onerror = null; // prevents looping
                     currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
                 }}/>
             <div className="card-body">
-            <h1 className="card-title" >{planets.name}</h1>
+            <h5 className="card-title" >{planets.name}</h5>
                 <Link className='btn' to={`/planets/${planets.uid}`}>
                  See More
                 </Link>
