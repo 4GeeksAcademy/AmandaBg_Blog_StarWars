@@ -6,7 +6,7 @@ import {PropTypes} from "prop-types"
 import { Context } from '../store/appContext';
 
 //Definir el componente como funcion react
-export const CardPlanets = ({planets}) => {
+export const CardPlanets = ({planets},...props) => {
     const { store, actions } = useContext(Context);
     
     //renderizado del componente, useParams se utilizará para obtener los parámetros de la URL.
@@ -21,7 +21,7 @@ export const CardPlanets = ({planets}) => {
                 <Link className='btn' to={`/planets/${planets.uid}`}>
                  See More
                 </Link>
-                <button className="btn float-end"><i className="fab fa-brands fa-old-republic"></i></button>
+                <button className="btn float-end"onClick={()=>{actions.addFavoriteItems(planets.name); }}><i className="fa fa-heart"></i></button>
             </div>
        </div>
     )

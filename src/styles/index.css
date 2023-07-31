@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-image: url(https://www.wallpapertip.com/wmimgs/42-420188_star-wars-earth-planet.jpg);
@@ -6,26 +5,48 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+
 /* Navbar */
 .navbar {
     background-color: rgba(0, 0, 0, 0.718);
     height: 4rem;
     padding: 0.6rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .btn {
+     cursor: pointer;
     border: none;
     transition: 0.3s;
     background: #e8b43c;
-    color: rgb(255, 255, 255);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.button:hover {
-  background-color: #45a049;
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+
 }
+.dropdownMenuButton{
+    background-color: none;
+}
+.dropdown-menu {
+    top: 100%;
+    background: #e8b43c;
+    border-radius: 5px;
+    padding: 0.4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fa-trash {
+    padding-left: none;
+    background: none;
+    border: none;
+}
+
+
 .img-sw {
     width: 5rem;
     margin-left: 1.5rem;
@@ -44,28 +65,28 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
- 
- 
- h1 {
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-     color:  #e8b43c;
-     justify-content: center;
- }
- 
- .card-text{
-     font-style: italic;
-     color: white;
-     font-family: monospace;
-     
- }
- 
- h4 {
-     color: #e8b43c;
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- }
- 
- .img-fluid{
-     margin: 1rem 2rem;
-     border-radius: 2rem;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
- }
+
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e8b43c;
+    justify-content: center;
+}
+
+.card-text {
+    font-style: italic;
+    color: white;
+    font-family: monospace;
+
+}
+
+h4 {
+    color: #e8b43c;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.img-fluid {
+    margin: 1rem 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -21,7 +21,7 @@ export const VehiclesDescription = () => {
         <div className="container-description">
             <div className="row">
                 <div className="col-md-6">
-                <img src={`https://starwars-visualguide.com/assets/img/vehicles/${store.vehiclesDetails.uid}.jpg`} className='img-fluid'
+                <img src={`https://starwars-visualguide.com/assets/img/vehicles/${store.vehiclesDetails && store.vehiclesDetails.uid}.jpg`} className='img-fluid'
                     onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
                         currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg";
@@ -31,22 +31,24 @@ export const VehiclesDescription = () => {
                     <div className="card-body">
                         <h1 className="card-title">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.name}</h1>
                         <p className="card-text">{store.vehiclesDetails.description && store.vehiclesDetails.description}</p>
-                        {/* <h4>Diameter:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.diameter}</p>
-                        <h4>Rotation Period:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.rotation_period}</p>
-                        <h4>Orbital Period:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.orbital_period}</p>
-                        <h4>Gravity:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.gravity}</p>
-                        <h4>Population:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.population}</p>
-                        <h4>Climate:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.climate}</p>
-                        <h4>Terrain:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.terrain}</p>
-                        <h4>Surface Water:</h4>
-                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.surface_water}</p> */}
+                        <h4>Model:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.vehicle_class}</p>
+                        <h4>Vehicle Class:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.model}</p>
+                        <h4>Manufacturer:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.manufacturer}</p>
+                        <h4>Cost in Credits:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.cost_in_credits}</p>
+                        <h4>Length:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.length}</p>
+                        <h4>Crew:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.crew}</p>
+                        <h4>Max atmosphering speed:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.max_atmosphering_speed}</p>
+                        <h4>Passengers:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.passengers}</p>
+                        <h4>Cargo Capacity:</h4>
+                        <p className="card-text">{store.vehiclesDetails.properties && store.vehiclesDetails.properties.cargo_capacity}</p>
                     </div>
                 </div>
             </div>

@@ -47,6 +47,22 @@ export const Home = (...props) => {
 
 				</div>
 			</div>
+			<div className="container">
+				<h2>Vehicles</h2>
+				<div className="card-group d-flex flex-wrap">
+					<ul className="list-group list-group-horizontal">
+						{
+							!!store.vehicles &&
+							store.vehicles.map((vehicles, index) => {
+								return (
+									<CardVehicles key={index} vehicles={vehicles} />
+								)
+							})
+						}
+					</ul>
+
+				</div>
+			</div>
 		</div>
 
 	)

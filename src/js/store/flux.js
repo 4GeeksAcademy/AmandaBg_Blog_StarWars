@@ -9,6 +9,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			planetsDetails: [],
 
+			vehicles: [],
+			vehiclesDetails: [],
+
+
+			favoriteItems:[
+
+			],
+
 			//llamar las funciones en el use effect 
 
 		},
@@ -56,25 +64,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console(error + "Error in getPlanetsById()"));
 			},
-			getVehicle: () => {
+			getVehicles: () => {
 				const store = getStore() //Traer el store y hacer el uso de variables
 				fetch(`${store.urlStarWars}/vehicles`)
 					.then(response => response.json())
 					.then(data => {
-						setStore({ vehicle: data.results }) //acceder a la data
+						setStore({ vehicles: data.results }) //acceder a la data
 					})
-					.catch(error => console(error + "Error in getVehicle()"));
+					.catch(error => console(error + "Error in getVehicles()"));
 			},
 
-			getVehicleById: id => {
+			getVehiclesById: id => {
 				const store = getStore();
 				fetch(`${store.urlStarWars}/vehicles/${id}`)
 					.then(response => response.json())
 					.then(data => {
-						setStore({vehicleDetails: data.result})
-						console.log(store.vehicleDetails);
+						setStore({vehiclesDetails: data.result})
+						console.log(store.vehiclesDetails);
 					})
-					.catch(error => console(error + "Error in getVehicleById()"));
+					.catch(error => console(error + "Error in getVehiclesById()"));
+			},
+
+			addFavoriteItems : (newItem)=>{
+				const store = getStore();
+				setStore({favoriteItems: [newItem, ...store.favoriteItems]})
+				localStorage.setItem("favoriteItems", JSON.stringify(store.favoriteItems));
+			},
+			deleteFavoriteItems : (position)=>{
+                const store = getStore();
+				let newFavoriteList = store.favoriteItems.filter((favorite, index)=> index != position )
+				setStore({favoriteItems: newFavoriteList})
+
 			},
 		}
 	}
